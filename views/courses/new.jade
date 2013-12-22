@@ -1,0 +1,15 @@
+extends ../layout
+block content_position
+  div#create-course
+    form( method="post")
+      div.form-row
+          div.label 名称：
+          input(type="text", name="name", id="name")
+      div.form-row
+          div.label 描述：
+          textarea( name="discription", rows=10, id="discription")
+      div.form-row
+          div.label 作者：
+          input(type="text", name="author", id="author")
+      div.form-row
+          input(type="submit", value="创建", class="submit")

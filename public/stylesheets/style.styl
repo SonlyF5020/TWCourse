@@ -1,5 +1,79 @@
 body
-  padding: 50px
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
-a
-  color: #00B7FF
+  font-family "Helvetica Neue", "Lucida Grande", "Arial"
+  font-size 20px
+  text-align center
+  text-stroke 1px rgba(255, 255, 255, 0.1)
+  color #555
+  margin 0
+  padding 0
+
+.header
+  height 100px
+  width 100%
+  line-height 100px
+  border-bottom 3px solid black
+  font-size 20px
+
+  span
+    padding 0 30px
+    border-color #6BBA70
+
+    a
+      text-decoration none
+
+    a:hover
+      border-bottom 3px solid black
+
+.content
+  width 930px
+  margin 50px auto
+
+  #create-course
+    form
+      padding 0 50px;
+
+      .form-row
+        margin-bottom 30px
+
+        .label
+          height 30px
+          text-align left
+
+        input
+          width 100%
+          height 40px
+          font-size 20px
+
+        input.submit
+          width 150px
+
+        textarea
+          width 100%
+          font-size 20px
+
+  #all-courses
+    .course
+      padding 20px
+
+      .table-form
+        margin-bottom 10px
+        text-align left
+
+        .label
+          font-size 15px
+
+        .name
+          font-weight bold
+
+      .actions
+        text-align right
+
+        span
+          a
+            margin-left 20px
+
+    .course:nth-child(even)
+      background #fff
+    .course:nth-child(odd)
+      background whitesmoke
+

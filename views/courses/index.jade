@@ -1,0 +1,14 @@
+extends ../layout
+block content_position
+  div#all-courses
+    - each course in courses
+      .course
+        .table-form
+          span.label 课程名称：
+          span.name= course.name
+        .table-form
+          span.label 作者：
+          span.author= course.author
+        .table-form
+          .label 课程描述：
+          .discription= course.discription

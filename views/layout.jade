@@ -1,7 +1,16 @@
-doctype 5
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    title TW Courses
+    link(rel='stylesheet' href='/stylesheets/style.css')
   body
-    block content
+    .header
+      span
+        a(href='/') 首页
+      span
+        a(href='/courses/new') 新建课程
+      span
+        a(href='/courses') 所有课程
+      span
+        a(href='/api') JSON API
+    .content
+      block content_position
