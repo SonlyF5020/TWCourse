@@ -1,0 +1,21 @@
+步骤：
+1. install mongodb on mac:
+sudo port install mongodb
+mkdir /opt/local/data
+mkdir /opt/local/data/db
+cd /opt/local/bin
+sudo ./mongod --dbpath /opt/local/data/db/
+
+2. install nodejs on mac:
+brew install node
+或
+sudo port install nodejs
+
+3. setup repo:
+git clone git@github.com:zhengjianing/TWCourse.git
+cd TWCourse
+npm install
+node app (或开启debug模式：1.启动debugger：node-inspector; 2.启动server：node --debug app )
+visit localhost:3000
+
+
