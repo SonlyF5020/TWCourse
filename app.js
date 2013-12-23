@@ -68,7 +68,7 @@ app.get('/courses/new', function (req, res) {
 
 app.post('/courses/new', function (req, res) {
   var course = new Course();
-  course.save({name: req.body.name, author: req.body.author, discription: req.body.discription}, function (err) {
+  course.save({name: req.body.name, author: req.body.author, overview: req.body.overview}, function (err) {
     if (err !== null) {
       return res.render('error', {errorMessage: err});
     }

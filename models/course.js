@@ -29,14 +29,14 @@ Course.prototype.all = function(callback) {
 
 Course.prototype.save = function(newCourse, callback) {
 
-  if (newCourse.name === '' || newCourse.author === '' || newCourse.discription === '') {
+  if (newCourse.name === '' || newCourse.author === '' || newCourse.overview === '') {
     return callback('Error: Has empty fields!');
   }
 
   var course = {
     name: newCourse.name,
     author: newCourse.author,
-    discription: newCourse.discription,
+    overview: newCourse.overview,
     created_at: new Date()
   };
 
