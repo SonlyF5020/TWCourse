@@ -11,5 +11,17 @@
     "stylus": "*",
     "mongodb": "*",
     "node-inspector": "*"
+  },
+  "description": "步骤： 1. install mongodb on mac: sudo port install mongodb mkdir /opt/local/data mkdir /opt/local/data/db cd /opt/local/bin sudo ./mongod --dbpath /opt/local/data/db/",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zhengjianing/TWCourse.git"
+  },
+  "author": "Twers",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/zhengjianing/TWCourse/issues"
   }
 }
