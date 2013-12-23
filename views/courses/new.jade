@@ -1,7 +1,7 @@
 extends ../layout
 block content_position
   div#create-course
-    form( method="post")
+    form(method="post" enctype="multipart/form-data")
       div.form-row
           div.label 名称：
           input(type="text", name="name", id="name")
@@ -11,5 +11,8 @@ block content_position
       div.form-row
           div.label 作者：
           input(type="text", name="author", id="author")
+      div.form-row
+          div.label 上传图片：
+          input(type="file", name="coverImage", id="coverImage")
       div.form-row
           input(type="submit", value="创建", class="submit")

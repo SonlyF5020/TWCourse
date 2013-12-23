@@ -3,7 +3,9 @@
  */
 var express = require('express');
 var Course = require('./models/course.js');
+var formidable = require('formidable');
 var http = require('http');
+var fs = require('fs');
 var path = require('path');
 var settings = require('./settings');
 var app = express();
@@ -22,6 +24,7 @@ app.use(express.session({ cookie: { maxAge: 60000 }}));
 app.use(app.router);
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.bodyParser({uploadDir:'./uploads'}));
 
 // development only
 if ('development' == app.get('env')) {
@@ -67,11 +70,19 @@ app.get('/courses/new', function (req, res) {
 });
 
 app.post('/courses/new', function (req, res) {
-  var course = new Course();
-  course.save({name: req.body.name, author: req.body.author, overview: req.body.overview}, function (err) {
-    if (err !== null) {
-      return res.render('error', {errorMessage: err});
-    }
-    res.render('success');
+  var form = new formidable.IncomingForm();
+  form.parse(req, function(err, fields, files) {
+    fs.readFile(files.coverImage.path, function (err, data) {
+      var imagePath = '/images/' + files.coverImage.name;
+      fs.writeFile(imagePath, data, function (err) {
+        var course = new Course();
+        course.save({name: fields.name, author: fields.author, overview: fields.overview, coverImagePath: imagePath}, function (err) {
+          if (err !== null) {
+            return res.render('error', {errorMessage: err});
+          }
+          res.render('success');
+        });
+      });
+    });
   });
 });

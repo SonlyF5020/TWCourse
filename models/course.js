@@ -29,7 +29,7 @@ Course.prototype.all = function(callback) {
 
 Course.prototype.save = function(newCourse, callback) {
 
-  if (newCourse.name === '' || newCourse.author === '' || newCourse.overview === '') {
+  if (newCourse.name === '' || newCourse.author === '' || newCourse.overview === ''|| newCourse.coverImagePath === '') {
     return callback('Error: Has empty fields!');
   }
 
@@ -37,7 +37,8 @@ Course.prototype.save = function(newCourse, callback) {
     name: newCourse.name,
     author: newCourse.author,
     overview: newCourse.overview,
-    created_at: new Date()
+    created_at: new Date(),
+    coverImagePath: newCourse.coverImagePath
   };
 
   mongodb.open(function (err, db) {
