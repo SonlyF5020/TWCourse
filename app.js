@@ -53,13 +53,13 @@ app.get('/error', function (req, res) {
 });
 
 // courses routes
-app.get('/courses', function (req, res) {
+app.get('/courses/index', function (req, res) {
   new Course().all(function(error, docs) {
     res.render('courses/index', {courses: docs});
   });
 });
 
-app.get('/courses.json', function (req, res) {
+app.get('/courses', function (req, res) {
   new Course().all(function(error, docs) {
     res.json(docs);
   });
